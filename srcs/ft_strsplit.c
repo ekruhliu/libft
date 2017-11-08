@@ -12,67 +12,65 @@
 
 #include "libft.h"
 
-char		**ft_super_array(char const *s, char c)
+static char		**ft_super_array(char const *s, char c)
 {
-	int		i;
-	int		x;
-	char	**super_array;
+	int			i;
+	int			words;
+	char		**super_array;
 
 	if (s == NULL)
 		return (NULL);
 	i = 0;
-	x = 0;
-	while (s[i++])
+	words = 0;
+	while (s[i] != '\0')
 	{
-		if ((s[i] == c) && ((s[i] >= 65 && s[i] <= 90) || (s[i] >= 97 && s[i] <= 122)))
-			x++;
+		if ((s[0] != c && i == 0) || (s[i] != c && s[i - 1] == c))
+			words++;
+		i++;
 	}
-	i = 0;
-	super_array = (char**)malloc(sizeof(char*) * x + 1);
+	super_array = (char **)malloc(sizeof(char*) * words + 1);
 	if (super_array == NULL)
 		return (NULL);
-	while (super_array[i])
-		i++;
-	super_array[i] = '\0';
 	return (super_array);
 }
 
-char	*ft_words(char const *s, char c)
+static t_pack	varible(void)
 {
-	int i;
-	char **super_a;
+	t_pack		pack;
 
-	if (s == NULL)
-		return (NULL);
-	i = 0;
-	super_a = ft_super_array
+	pack.size = 0;
+	pack.s_a_p = 0;
+	pack.words = 0;
+	pack.start = 0;
+	pack.i = 0;
+	return (pack);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	int i;
-	int w;
-	char *str;
-	char *word;
-	char **new;
+	char		**super_array;
+	t_pack		pack;
 
-	if (s == NULL)
+	pack = varible();
+	super_array = ft_super_array(s, c);
+	if (super_array == NULL)
 		return (NULL);
-	i = 0;
-	w = 0;
-	word = 0;
-	str = (char*)s;
-	while(str[i])
+	while (s[pack.i++])
 	{
-		if ((str[i] >= 65 && str[i] <= 90) || (str[i] >= 97 && str[i] <= 122))
-			word[w] = str[i];
-		if (str[i] == c && (str[i - 1] >= 65 && str[i - 1] <= 90) || (str[i - 1] >= 97 && str[i - 1] <= 122))
-		{
-			new = (char*)malloc(sizeof(char) * i + 1);
-			new = word;
-			word = 0;
-		}
-
-		i++;
+		while (s[pack.i] == c)
+			pack.i++;
+		pack.start = pack.i;
+		while (s[pack.i] != c && s[pack.i] != '\0')
+			pack.i++;
+		pack.size = pack.i - pack.start;
 	}
+	if (pack.words != 0)
+	{
+		super_array[pack.s_a_p] = (char*)malloc(sizeof(char) * pack.size + 1);
+		super_array[pack.s_a_p] = ft_strsub(s, pack.start, pack.size);
+		pack.words--;
+		(super_array[pack.s_a_p] != 0 ? pack.s_a_p += 1 : 0);
+	}
+	super_array[pack.s_a_p] = (char*)'\0';
+	return (super_array);
 }
