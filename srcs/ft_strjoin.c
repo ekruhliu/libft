@@ -10,71 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-char	*ft_strcat(char *dst, const char *src)
-{
-	int i;
-	int o;
-
-	i = 0;
-	o = 0;
-	while (dst[i] != '\0')
-		i++;
-	while (src[o] != '\0')
-	{
-		dst[i] = src[o];
-		o++;
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
-}
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
+#include "libft.h"
 
 char		*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new;
-	char	*str;
-	size_t	len;
-	int 	i;
+	size_t	len_s;
+	size_t	i;
+	size_t	x;
 
 	if (s1 != NULL && s2 != NULL)
 	{
 		i = 0;
-		str = ft_strcat((char*)s1, s2);
-		len = ft_strlen(str);
-		new = (char*)malloc(sizeof(char) * len + 1);
+		x = 0;
+		len_s = ft_strlen(s1);
+		new = (char*)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
 		if (new != NULL)
 		{
-			while (len)
-			{
-				new[i] = str[i];
-				i++;
-				len--;
-			}
+			while (len_s--)
+				new[i++] = s1[x++];
+			x = 0;
+			while (s2[x] != '\0')
+				new[i++] = s2[x++];
+			new[i] = '\0';
+			return (new);
 		}
-		new[i] = '\0';
-		return (new);
 	}
-	return (0);
-}
-
-int	main(void)
-{
-	char *s1 = "my favorite animal is";
-	char *s2 = " ";
-	char *s3 = "the nyancat";
-
-	printf("%s\n", ft_strjoin(ft_strjoin(s1, s2), s3));
-	return(0);
+	return (NULL);
 }

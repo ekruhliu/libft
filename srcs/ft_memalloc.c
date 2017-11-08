@@ -21,7 +21,7 @@ void		*ft_memalloc(size_t size)
 	{
 		i = 0;
 		mem = (char*)malloc(sizeof(char) * size);
- 		if (mem != NULL)
+		if (mem != NULL)
 		{
 			while (size != 0)
 			{
