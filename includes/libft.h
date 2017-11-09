@@ -13,10 +13,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
 
 void			ft_bzero(void *b, size_t len);
 void			*ft_memccpy(void *out, const void *in, int c, size_t n);
@@ -70,5 +68,14 @@ typedef	struct	s_pack
 	int s_a_p;
 	int size;
 }				t_pack;
+char			*ft_itoa(int n);
+void			ft_putchar(char c);
+void			ft_putstr(char const *s);
+void			ft_putendl(char const *s);
+void			ft_putnbr(int n);
+void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char const *s, int fd);
+void			ft_putendl_fd(char const *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
 
 #endif

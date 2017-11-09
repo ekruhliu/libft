@@ -34,6 +34,24 @@ static char		**ft_super_array(char const *s, char c)
 	return (super_array);
 }
 
+static int		ft_super_array_count_words(char const *s, char c)
+{
+	int			i;
+	int			w;
+
+	if (s == NULL)
+		return (0);
+	i = 0;
+	w = 0;
+	while (s[i] != '\0')
+	{
+		if ((s[0] != c && i == 0) || (s[i] != c && s[i - 1] == c))
+			w++;
+		i++;
+	}
+	return (w);
+}
+
 static t_pack	varible(void)
 {
 	t_pack		pack;
@@ -48,14 +66,15 @@ static t_pack	varible(void)
 
 char			**ft_strsplit(char const *s, char c)
 {
-	char		**super_array;
+	char		**s_a;
 	t_pack		pack;
 
 	pack = varible();
-	super_array = ft_super_array(s, c);
-	if (super_array == NULL)
+	s_a = ft_super_array(s, c);
+	pack.words = ft_super_array_count_words(s, c);
+	if (s_a == NULL)
 		return (NULL);
-	while (s[pack.i++])
+	while (s[pack.i])
 	{
 		while (s[pack.i] == c)
 			pack.i++;
@@ -63,14 +82,13 @@ char			**ft_strsplit(char const *s, char c)
 		while (s[pack.i] != c && s[pack.i] != '\0')
 			pack.i++;
 		pack.size = pack.i - pack.start;
+		if (pack.words-- != 0)
+		{
+			s_a[pack.s_a_p] = (char*)malloc(sizeof(char) * pack.size + 1);
+			s_a[pack.s_a_p] = ft_strsub(s, pack.start, pack.size);
+			(s_a[pack.s_a_p] != 0 ? pack.s_a_p += 1 : 0);
+		}
 	}
-	if (pack.words != 0)
-	{
-		super_array[pack.s_a_p] = (char*)malloc(sizeof(char) * pack.size + 1);
-		super_array[pack.s_a_p] = ft_strsub(s, pack.start, pack.size);
-		pack.words--;
-		(super_array[pack.s_a_p] != 0 ? pack.s_a_p += 1 : 0);
-	}
-	super_array[pack.s_a_p] = (char*)'\0';
-	return (super_array);
+	s_a[pack.s_a_p] = (char*)'\0';
+	return (s_a);
 }

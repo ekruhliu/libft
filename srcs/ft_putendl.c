@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/30 20:38:18 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/11/08 14:55:48 by ekruhliu         ###   ########.fr       */
+/*   Created: 2017/11/09 17:57:55 by ekruhliu          #+#    #+#             */
+/*   Updated: 2017/11/09 17:57:56 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void	ft_putendl(char const *s)
 {
 	int i;
-	int nb;
-	int minus;
 
 	i = 0;
-	nb = 0;
-	minus = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == 45)
+	if (s != NULL)
 	{
-		minus++;
-		i++;
+		while (s[i])
+		{
+			ft_putchar(s[i]);
+			i++;
+		}
+		ft_putchar('\n');
 	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		nb = nb * 10 + (str[i] - 48);
-		i++;
-	}
-	if (minus == 1)
-		return (-nb);
-	return (nb);
 }
