@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_super_array.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/30 11:26:34 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/10/30 11:26:35 by ekruhliu         ###   ########.fr       */
+/*   Created: 2017/11/10 19:22:34 by ekruhliu          #+#    #+#             */
+/*   Updated: 2017/11/10 19:22:36 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dest, const char *src, size_t n)
+char		**ft_super_array(char const *s, char c)
 {
-	size_t	i;
+	int				i;
+	int				words;
+	char			**super_array;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
-	if (n < ft_strlen(dest))
-		return (ft_strlen(src) + n);
-	else
+	words = 0;
+	while (s[i] != '\0')
 	{
-		while (dest[i] != '\0')
-		{
-			i++;
-		}
-		while (i < n - 1)
-		{
-			dest[i] = *src;
-			src++;
-			i++;
-		}
-		dest[i] = '\0';
-		return (ft_strlen(dest) + ft_strlen(src));
+		if ((s[0] != c && i == 0) || (s[i] != c && s[i - 1] == c))
+			words++;
+		i++;
 	}
+	super_array = (char **)malloc(sizeof(char*) * words + 1);
+	if (super_array == NULL)
+		return (NULL);
+	return (super_array);
 }

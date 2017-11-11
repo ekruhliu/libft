@@ -23,9 +23,10 @@ int		ft_atoi(const char *str)
 	minus = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-	if (str[i] == 45)
+	if (str[i] == 45 || str[i] == 43)
 	{
-		minus++;
+		if (str[i] == 45)
+			minus++;
 		i++;
 	}
 	while (str[i] >= 48 && str[i] <= 57)

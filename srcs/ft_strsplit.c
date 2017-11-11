@@ -12,28 +12,6 @@
 
 #include "libft.h"
 
-static char		**ft_super_array(char const *s, char c)
-{
-	int			i;
-	int			words;
-	char		**super_array;
-
-	if (s == NULL)
-		return (NULL);
-	i = 0;
-	words = 0;
-	while (s[i] != '\0')
-	{
-		if ((s[0] != c && i == 0) || (s[i] != c && s[i - 1] == c))
-			words++;
-		i++;
-	}
-	super_array = (char **)malloc(sizeof(char*) * words + 1);
-	if (super_array == NULL)
-		return (NULL);
-	return (super_array);
-}
-
 static int		ft_super_array_count_words(char const *s, char c)
 {
 	int			i;
