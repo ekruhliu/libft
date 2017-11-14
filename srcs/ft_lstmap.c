@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/30 11:26:34 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/10/30 11:26:35 by ekruhliu         ###   ########.fr       */
+/*   Created: 2017/11/14 11:19:31 by ekruhliu          #+#    #+#             */
+/*   Updated: 2017/11/14 11:19:32 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dest, const char *src, size_t n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	size_t	i;
+	t_list	*new_list;
+	t_list	*head;
 
-	i = 0;
-	if (n < ft_strlen(dest))
-		return (ft_strlen(src) + n);
-	else
+	if (lst == NULL || f == NULL)
+		return (0);
+	new_list = f(lst);
+	head = new_list;
+	while (lst->next)
 	{
-		while (dest[i] != '\0')
-		{
-			i++;
-		}
-		while ((i < n - 1) && *src)
-		{
-			dest[i] = *src;
-			src++;
-			i++;
-		}
-		dest[i] = '\0';
-		return (ft_strlen(dest) + ft_strlen(src));
+		lst = lst->next;
+		new_list->next = f(lst);
+		new_list = new_list->next;
 	}
+	return (head);
 }
