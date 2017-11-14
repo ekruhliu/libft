@@ -24,8 +24,9 @@ SRC = ./srcs/ft_isalpha.c ./srcs/ft_memchr.c ./srcs/ft_strcat.c ./srcs/ft_strlca
 		./srcs/ft_strmap.c ./srcs/ft_strmapi.c ./srcs/ft_strequ.c ./srcs/ft_strnequ.c ./srcs/ft_strsub.c \
 		./srcs/ft_strjoin.c ./srcs/ft_strtrim.c ./srcs/ft_strsplit.c ./srcs/ft_itoa.c ./srcs/ft_putchar.c \
 		./srcs/ft_putstr.c ./srcs/ft_putendl.c ./srcs/ft_putnbr.c ./srcs/ft_putchar_fd.c ./srcs/ft_putstr_fd.c \
-		./srcs/ft_putendl_fd.c ./srcs/ft_putnbr_fd.c ./srcs/ft_lstnew.c ./srcs/ft_lstdelone.c \
-		./srcs/ft_lstdel.c ./srcs/ft_lstadd.c ./srcs/ft_lstiter.c ./srcs/ft_lstmap.c \
+		./srcs/ft_putendl_fd.c ./srcs/ft_putnbr_fd.c ./srcs/ft_lstnew.c ./srcs/ft_lstdelone.c ./srcs/ft_middle.c \
+		./srcs/ft_lstdel.c ./srcs/ft_lstadd.c ./srcs/ft_lstiter.c ./srcs/ft_lstmap.c ./srcs/ft_isnegative.c \
+		./srcs/ft_strnlen.c ./srcs/ft_same_symbol.c ./srcs/ft_swap.c \
 
 OBJ = ft_isalpha.o ft_memchr.o ft_strcat.o ft_strlcat.o ft_strnstr.o \
 		ft_isascii.o ft_memcmp.o ft_strchr.o ft_strlen.o ft_strrchr.o \
@@ -38,7 +39,8 @@ OBJ = ft_isalpha.o ft_memchr.o ft_strcat.o ft_strlcat.o ft_strnstr.o \
 		ft_strjoin.o ft_strtrim.o ft_strsplit.o ft_itoa.o ft_putchar.o \
 		ft_putstr.o ft_putendl.o ft_putnbr.o ft_putchar_fd.o ft_putstr_fd.o \
 		ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstdelone.o \
-		ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o \
+		ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o ft_isnegative.o \
+		ft_middle.o ft_strnlen.o ft_same_symbol.o ft_swap.o \
 
 all: $(NAME)
 
