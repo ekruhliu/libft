@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ekruhliu <ekruhliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 15:26:08 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/10/26 15:26:09 by ekruhliu         ###   ########.fr       */
+/*   Updated: 2017/11/16 13:05:01 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void					*ft_memcpy(void *out, const void *in, size_t n)
 	const unsigned char	*inq;
 	unsigned char		*o;
 
+	if(out == NULL && in == NULL)
+		return (0);
 	i = 0;
 	inq = in;
 	o = out;

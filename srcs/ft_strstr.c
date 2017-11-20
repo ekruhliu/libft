@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ekruhliu <ekruhliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 13:56:37 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/10/30 13:56:38 by ekruhliu         ###   ########.fr       */
+/*   Updated: 2017/11/16 13:05:07 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*ft_strstr(const char *big, const char *little)
 	char	*b;
 	char	*l;
 
-	if (*big == '\0' && *little == '\0')
+	if (*little == '\0')
 		return ((char*)big);
 	while (*big)
 	{

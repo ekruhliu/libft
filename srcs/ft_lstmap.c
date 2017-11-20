@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ekruhliu <ekruhliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 11:19:31 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/11/14 11:19:32 by ekruhliu         ###   ########.fr       */
+/*   Updated: 2017/11/16 14:33:06 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*head;
 
 	if (lst == NULL || f == NULL)
-		return (0);
+		return (NULL);
 	new_list = f(lst);
 	head = new_list;
 	while (lst->next)

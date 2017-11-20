@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ekruhliu <ekruhliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 13:30:09 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/10/30 13:30:10 by ekruhliu         ###   ########.fr       */
+/*   Updated: 2017/11/16 14:20:09 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*ft_strrchr(const char *str, int c)
 {
-	int		i;
+	size_t	i;
 	int		m;
 	char	*s;
 	char	*x;

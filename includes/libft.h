@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ekruhliu <ekruhliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 10:54:23 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/10/30 10:54:25 by ekruhliu         ###   ########.fr       */
+/*   Updated: 2017/11/15 16:15:36 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <string.h>
 
 typedef	struct		s_pack
 {
@@ -94,7 +95,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_isnegative(int c);
 int					ft_middle(int a, int b, int c);
 size_t				ft_strnlen(const char *s, size_t maxlen);
-int					ft_same_symbol(char *s, char l);
+size_t				ft_same_symbol(char *s, char l);
 void				ft_swap(int *a, int *b);
 
 #endif

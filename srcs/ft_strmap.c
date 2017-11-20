@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ekruhliu <ekruhliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 14:04:50 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/11/04 14:04:51 by ekruhliu         ###   ########.fr       */
+/*   Updated: 2017/11/15 12:45:06 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char		*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*str;
-	int		i;
-	int		len;
+	size_t	i;
+	size_t	len;
 
 	i = 0;
 	if (s != NULL)

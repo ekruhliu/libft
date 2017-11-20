@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ekruhliu <ekruhliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 17:54:41 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/11/09 17:54:42 by ekruhliu         ###   ########.fr       */
+/*   Updated: 2017/11/15 12:38:24 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void		ft_putstr(char const *s)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	if (s != NULL)

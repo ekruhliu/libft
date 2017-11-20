@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ekruhliu <ekruhliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 18:41:36 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/11/07 18:41:38 by ekruhliu         ###   ########.fr       */
+/*   Updated: 2017/11/15 12:46:22 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static char		**ft_super_array(char const *s, char c)
 {
-	int			i;
-	int			words;
+	size_t		i;
+	size_t		words;
 	char		**super_array;
 
 	if (s == NULL)

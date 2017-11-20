@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ekruhliu <ekruhliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 10:41:57 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/10/30 10:41:58 by ekruhliu         ###   ########.fr       */
+/*   Updated: 2017/11/16 12:49:17 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strcat(char *dst, const char *src)
 {
-	int i;
-	int o;
+	size_t	i;
+	size_t	o;
 
 	i = 0;
 	o = 0;

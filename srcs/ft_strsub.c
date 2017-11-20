@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekruhliu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ekruhliu <ekruhliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 14:01:28 by ekruhliu          #+#    #+#             */
-/*   Updated: 2017/11/06 14:01:29 by ekruhliu         ###   ########.fr       */
+/*   Created: 2017/11/15 12:29:39 by ekruhliu          #+#    #+#             */
+/*   Updated: 2017/11/15 12:32:04 by ekruhliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char				*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char			*new;
-	unsigned int	i;
+	char		*new;
+	size_t		i;
 
 	i = 0;
 	if (s != NULL)
