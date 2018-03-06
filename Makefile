@@ -11,22 +11,22 @@
 # **************************************************************************** #
 
 NAME = libft.a
-HEADER = ./includes/
+HEADER = ./
 FLAGS = -Wall -Wextra -Werror
 HDR = -c -I $(HEADER)
-SRC = ./srcs/ft_isalpha.c ./srcs/ft_memchr.c ./srcs/ft_strcat.c ./srcs/ft_strlcat.c ./srcs/ft_strnstr.c \
-		./srcs/ft_isascii.c ./srcs/ft_memcmp.c ./srcs/ft_strchr.c ./srcs/ft_strlen.c ./srcs/ft_strrchr.c \
-		./srcs/ft_atoi.c ./srcs/ft_isdigit.c ./srcs/ft_memcpy.c ./srcs/ft_strcmp.c ./srcs/ft_strncat.c	\
-		./srcs/ft_strstr.c ./srcs/ft_bzero.c ./srcs/ft_isprint.c ./srcs/ft_memmove.c ./srcs/ft_strcpy.c \
-		./srcs/ft_strncmp.c ./srcs/ft_tolower.c ./srcs/ft_isalnum.c ./srcs/ft_memccpy.c ./srcs/ft_memset.c \
-		./srcs/ft_strdup.c ./srcs/ft_strncpy.c ./srcs/ft_toupper.c ./srcs/ft_memalloc.c ./srcs/ft_memdel.c \
-		./srcs/ft_strnew.c ./srcs/ft_strdel.c ./srcs/ft_strclr.c ./srcs/ft_striter.c  ./srcs/ft_striteri.c \
-		./srcs/ft_strmap.c ./srcs/ft_strmapi.c ./srcs/ft_strequ.c ./srcs/ft_strnequ.c ./srcs/ft_strsub.c \
-		./srcs/ft_strjoin.c ./srcs/ft_strtrim.c ./srcs/ft_strsplit.c ./srcs/ft_itoa.c ./srcs/ft_putchar.c \
-		./srcs/ft_putstr.c ./srcs/ft_putendl.c ./srcs/ft_putnbr.c ./srcs/ft_putchar_fd.c ./srcs/ft_putstr_fd.c \
-		./srcs/ft_putendl_fd.c ./srcs/ft_putnbr_fd.c ./srcs/ft_lstnew.c ./srcs/ft_lstdelone.c ./srcs/ft_middle.c \
-		./srcs/ft_lstdel.c ./srcs/ft_lstadd.c ./srcs/ft_lstiter.c ./srcs/ft_lstmap.c ./srcs/ft_isnegative.c \
-		./srcs/ft_strnlen.c ./srcs/ft_same_symbol.c ./srcs/ft_swap.c \
+SRC = ./ft_isalpha.c ./ft_memchr.c ./ft_strcat.c ./ft_strlcat.c ./ft_strnstr.c \
+		./ft_isascii.c ./ft_memcmp.c ./ft_strchr.c ./ft_strlen.c ./ft_strrchr.c \
+		./ft_atoi.c ./ft_isdigit.c ./ft_memcpy.c ./ft_strcmp.c ./ft_strncat.c	\
+		./ft_strstr.c ./ft_bzero.c ./ft_isprint.c ./ft_memmove.c ./ft_strcpy.c \
+		./ft_strncmp.c ./ft_tolower.c ./ft_isalnum.c ./ft_memccpy.c ./ft_memset.c \
+		./ft_strdup.c ./ft_strncpy.c ./ft_toupper.c ./ft_memalloc.c ./ft_memdel.c \
+		./ft_strnew.c ./ft_strdel.c ./ft_strclr.c ./ft_striter.c  ./ft_striteri.c \
+		./ft_strmap.c ./ft_strmapi.c ./ft_strequ.c ./ft_strnequ.c ./ft_strsub.c \
+		./ft_strjoin.c ./ft_strtrim.c ./ft_strsplit.c ./ft_itoa.c ./ft_putchar.c \
+		./ft_putstr.c ./ft_putendl.c ./ft_putnbr.c ./ft_putchar_fd.c ./ft_putstr_fd.c \
+		./ft_putendl_fd.c ./ft_putnbr_fd.c ./ft_lstnew.c ./ft_lstdelone.c ./ft_middle.c \
+		./ft_lstdel.c ./ft_lstadd.c ./ft_lstiter.c ./ft_lstmap.c ./ft_isnegative.c \
+		./ft_strnlen.c ./ft_same_symbol.c ./ft_swap.c ./get_next_line.c \
 
 OBJ = ft_isalpha.o ft_memchr.o ft_strcat.o ft_strlcat.o ft_strnstr.o \
 		ft_isascii.o ft_memcmp.o ft_strchr.o ft_strlen.o ft_strrchr.o \
@@ -40,7 +40,7 @@ OBJ = ft_isalpha.o ft_memchr.o ft_strcat.o ft_strlcat.o ft_strnstr.o \
 		ft_putstr.o ft_putendl.o ft_putnbr.o ft_putchar_fd.o ft_putstr_fd.o \
 		ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstdelone.o \
 		ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o ft_isnegative.o \
-		ft_middle.o ft_strnlen.o ft_same_symbol.o ft_swap.o \
+		ft_middle.o ft_strnlen.o ft_same_symbol.o ft_swap.o get_next_line.o \
 
 all: $(NAME)
 

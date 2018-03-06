@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <limits.h>
+# define BUFF_SIZE 100
 
 typedef	struct		s_pack
 {
@@ -31,6 +33,7 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+int					get_next_line(const int fd, char **line);
 void				ft_bzero(void *b, size_t len);
 void				*ft_memccpy(void *out, const void *in, int c, size_t n);
 void				*ft_memchr(const void *src, int c, size_t len);
